@@ -1,7 +1,17 @@
 import { actionTypes } from './constants';
 
+const {
+  REMOVE_TASK,
+  ADD_TASK,
+  MOVE_TASK,
+  UPDATE_TASK,
+  FETCH_TASKS_START,
+  FETCH_TASKS_SUCCESS,
+  FETCH_TASKS_FAILURE,
+} = actionTypes;
+
 export const removeTask = (taskId, listId) => ({
-  type: actionTypes.REMOVE_TASK,
+  type: REMOVE_TASK,
   payload: {
     taskId,
     listId
@@ -9,7 +19,7 @@ export const removeTask = (taskId, listId) => ({
 });
 
 export const addTask = (task, listId) => ({
-  type: actionTypes.ADD_TASK,
+  type: ADD_TASK,
   payload: {
     task,
     listId
@@ -17,29 +27,29 @@ export const addTask = (task, listId) => ({
 });
 
 export const moveTask = (moveResult) => ({
-  type: actionTypes.MOVE_TASK,
+  type: MOVE_TASK,
   payload: {
     moveResult
   },
 });
 
 export const updateTask = (task) => ({
-  type: actionTypes.UPDATE_TASK,
+  type: UPDATE_TASK,
   payload: {
     task
   }
 })
 
 export const fetchTasksStart = () => ({
-  type: actionTypes.FETCH_TASKS_START
+  type: FETCH_TASKS_START
 })
 
 export const fetchTasksSuccess = data => ({
-  type: actionTypes.FETCH_TASKS_SUCCESS,
+  type: FETCH_TASKS_SUCCESS,
   payload: data
 });
 
 export const fetchTasksFailure = errorMessage => ({
-  type: actionTypes.FETCH_TASKS_FAILURE,
+  type: FETCH_TASKS_FAILURE,
   payload: errorMessage
 });

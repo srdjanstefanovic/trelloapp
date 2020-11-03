@@ -13,8 +13,14 @@ import {
   Typography 
 } from '@material-ui/core'
 
-const TaskCard = (props) => {
-  const {task, listId, innerRef, provided } = props;
+const TaskCard = ({
+  task,
+  listId,
+  innerRef,
+  provided,
+  toggleModal,
+  removeTask
+}) => {
   
   return (
   <Grid
@@ -42,7 +48,7 @@ const TaskCard = (props) => {
       <CardActions>
         <Button
           variant="contained"
-          onClick={() => props.toggleModal(task.id, listId)}
+          onClick={() => toggleModal(task.id, listId)}
           startIcon={<EditIcon/>}
           size="small"
           color="primary">
@@ -51,7 +57,7 @@ const TaskCard = (props) => {
 
         <Button
           variant="contained"
-          onClick={() => props.removeTask(task.id, listId)}
+          onClick={() => removeTask(task.id, listId)}
           startIcon={<DeleteIcon/>}
           size="small"
           color="secondary">

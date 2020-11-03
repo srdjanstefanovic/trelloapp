@@ -26,11 +26,13 @@ const useStyles = makeStyles({
   
 });
 
-function TaskList(props) {
+function TaskList({
+  list,
+  tasks,
+  toggleModal
+}) {
   const classes = useStyles();
-  const { list, tasks, toggleModal } = props;
-  const taskIds = list.taskIds;
-  const tasksInList = taskIds.map(taskId => tasks[taskId]);
+  const tasksInList = list.taskIds.map(taskId => tasks[taskId]);
 
   const taskCards = tasksInList.map((task, i) => (
     <Draggable key={task.id} draggableId={String(task.id)} index={i}>

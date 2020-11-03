@@ -16,6 +16,7 @@ const useStyles = makeStyles({
 
 const About = () => {
   const classes = useStyles();
+
   return (
   <>
     <Typography
@@ -34,8 +35,14 @@ const About = () => {
       Trello is a web-based Kanban-style list-making application which is a subsidiary of Atlassian.[6] Originally created by Fog Creek Software in 2011, it was spun out to form the basis of a separate company in 2014[7][8] and later sold to Atlassian in January 2017.[9] The company is based in New York City, U.S.[10
     </Typography>
     <div className={classes.video}>
-      <iframe width="500" height="315"
-        src="https://youtu.be/tVooja0Ta5I">
+      <iframe
+        title="trello video"
+        width="1045"
+        height="653"
+        src="https://www.youtube.com/embed/xky48zyL9iA"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
       </iframe> 
     </div>
   </>

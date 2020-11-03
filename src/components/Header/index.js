@@ -12,6 +12,7 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const classes = useStyles();
+
   return (
     <Typography
       className={classes.header}

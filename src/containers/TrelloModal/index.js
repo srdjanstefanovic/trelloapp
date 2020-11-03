@@ -18,10 +18,20 @@ const useStyles = makeStyles({
   }
 })
 
-export const TaskModal = (props) => {
+export const TaskModal = ({
+  tasks,
+  updateTask,
+  addTask,
+  removeTask,
+  toggleModal,
+  modal: {
+    open,
+    listId,
+    taskId
+  },
+}) => {
   const classes = useStyles();
-  const { taskId, listId, open } = props.modal;
-  const task = props.tasks?.[taskId];
+  const task = tasks && tasks[taskId];
   const inputTitle = useRef(null);
   const inputDescription = useRef(null);
 
@@ -31,31 +41,31 @@ export const TaskModal = (props) => {
       title: inputTitle.current.value,
       desc: inputDescription.current.value
     }
-    taskId? props.updateTask(newTask) : props.addTask(newTask, listId);
-    props.toggleModal();
+    taskId ? updateTask(newTask) : addTask(newTask, listId);
+    toggleModal();
   }
 
   const handleDelete = () => {
-    props.removeTask(taskId, listId);
-    props.toggleModal();
+    removeTask(taskId, listId);
+    toggleModal();
   }
   
   return (
     <Modal
       open={open}
-      onClose={props.toggleModal}
+      onClose={toggleModal}
       aria-labelledby="simple-modal-title"
       aria-describedby="simple-modal-description">
 
       <Paper component="form" className={classes.modalContent}>
         <TextField
           inputRef={inputTitle}
-          defaultValue={taskId? task.title : 'Title'}/>
+          defaultValue={taskId ? task.title : 'Title'}/>
 
         <Box my={3}>
           <TextField
             label="Task Description"
-            defaultValue={taskId? task.desc: 'enter the description'}
+            defaultValue={taskId ? task.desc: 'enter the description'}
             multiline
             rows={5}
             fullWidth
@@ -77,7 +87,7 @@ export const TaskModal = (props) => {
 
           <Box>
             <Button
-              onClick={props.toggleModal}
+              onClick={toggleModal}
               variant="text" 
               color="primary"
               disableFocusRipple>
@@ -101,7 +111,7 @@ export const TaskModal = (props) => {
 
 const mapStateToProps = (state) => ({
   tasks: state.board.tasks,
-  modal: state.modal
+  modal: state.modal,
 });
 
 const mapDispatchToProps = (dispatch) => ({

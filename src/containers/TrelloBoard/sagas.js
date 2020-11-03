@@ -2,7 +2,6 @@ import { takeLatest, call, put, all } from 'redux-saga/effects';
 import { actionTypes } from './constants';
 import {fetchTasksSuccess, fetchTasksFailure} from './actions'
 import api from '../../utils/api';
-import { NotesTwoTone } from '@material-ui/icons';
 
 export function* fetchTasksAsync() {
   try {

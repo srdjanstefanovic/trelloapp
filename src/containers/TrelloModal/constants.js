@@ -3,8 +3,8 @@ export const actionTypes = {
     CHANGE_TEXT: 'CHANGE_TEXT'
   };
   
-  export const INITIAL_STATE = {
-    open: false,
-    taskId: null,
-    listId: null
-  }
+export const INITIAL_STATE = {
+  open: false,
+  taskId: null,
+  listId: null
+}

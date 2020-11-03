@@ -27,22 +27,13 @@ const ListContainer = ({
   fetchTasks
 }) => {
   const classes = useStyles();
-  const keys = Object.keys(lists);
+  const listIds = Object.keys(lists);
 
   useEffect(() => {
-    if (isEmpty(keys)) {
+    if (isEmpty(listIds)) {
       fetchTasks();
     }
-  }, [fetchTasks]);
-
-  const taskLists = keys.map((key) => {
-    const list = lists[key];
-    return (
-      <TrelloList
-        key={list.id}
-        list={list}/>
-    );
-  });
+  }, [fetchTasks, listIds]);
 
   return (
     isFetching? <Spinner/> :
@@ -55,7 +46,12 @@ const ListContainer = ({
         alignItems="flex-start">
           <DragDropContext
             onDragEnd={moveTask}>
-            {taskLists}
+            {listIds.map((listId) => (
+              <TrelloList
+                key={listId}
+                list={lists[listId]}
+              />
+            ))}
           </DragDropContext>
       </Grid>
       <TrelloModal />
