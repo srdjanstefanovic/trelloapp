@@ -6,6 +6,7 @@ const useStyles = makeStyles({
   header: {
     color: 'white',
     fontWeight: 500,
+    margin: '30px'
   }
   
 });
@@ -16,7 +17,7 @@ const Header = () => {
   return (
     <Typography
       className={classes.header}
-      variant="h1"
+      variant="h2"
       align="center"
       gutterBottom
       component="h1">
