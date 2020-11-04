@@ -33,7 +33,7 @@ export const TaskModal = ({
   const classes = useStyles();
   const task = tasks && tasks[taskId];
   const inputTitle = useRef(null);
-  const inputDescription = useRef(null);
+  const inputDescription = useRef(null); 
 
   const handleSave = () => {
     const newTask = {
@@ -82,7 +82,7 @@ export const TaskModal = ({
             color="secondary"
             startIcon={<DeleteForeverIcon/>}
             disabled={!taskId}>
-            delete
+            Delete
           </Button>
 
           <Box>
@@ -99,7 +99,7 @@ export const TaskModal = ({
               color="primary"
               onClick={handleSave}
               startIcon={<SaveIcon/>}>
-              save
+              Save
             </Button>
           </Box>
         </Box>
