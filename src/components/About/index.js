@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography } from '@material-ui/core'
-
+import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -19,7 +19,11 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     marginBottom: '30px'
-  }
+  },
+  link: {
+    color: 'white',
+    transform: 'translateX(-50%)'
+  },
 });
 
 const About = () => {
@@ -35,6 +39,15 @@ const About = () => {
       component="h1">
       About trello
     </Typography>
+
+    <Typography
+      className={classes.text}
+      variant="h6"
+      align="center"
+      gutterBottom>
+        <Link className={classes.link} to="/">← Back to main page</Link>
+    </Typography>
+
     <Typography
       className={classes.text}
       variant="h6"
