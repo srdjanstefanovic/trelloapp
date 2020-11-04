@@ -7,7 +7,13 @@ const useStyles = makeStyles({
   header: {
     color: 'white',
     fontWeight: 500,
-    margin: '30px',
+    margin: '20px 90px 40px 90px',
+  },
+  text: {
+    color: 'white',
+    fontWeight: 400,
+    textAlign: 'justify',
+    margin: '20px 90px 40px 90px',
   },
   video: {
     display: 'flex',
@@ -30,7 +36,7 @@ const About = () => {
       About trello
     </Typography>
     <Typography
-      className={classes.header}
+      className={classes.text}
       variant="h6"
       align="center"
       gutterBottom>

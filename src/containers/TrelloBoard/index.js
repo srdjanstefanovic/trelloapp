@@ -43,7 +43,8 @@ const ListContainer = ({
         container
         style={{flexWrap:'nowrap'}}
         spacing={7} 
-        alignItems="flex-start">
+        alignItems="flex-start"
+        justifyContent="center">
           <DragDropContext
             onDragEnd={moveTask}>
             {listIds.map((listId) => (
