@@ -20,7 +20,7 @@ const Header = () => {
       variant="h2"
       align="center"
       gutterBottom
-      component="h1">
+      >
       Trello App
     </Typography>
   )
